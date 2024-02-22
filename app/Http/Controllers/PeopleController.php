@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Validator;
 
 class PeopleController extends Controller
 {
+
+
     public function index()
     {
         $people = PeopleModel::all();
         if ($people->count() > 0) {
-            return response()->json([
-                'people' => $people
-            ]);
+            return response()->json($people);
         } else {
             return response()->json([
                 'status' => 404,

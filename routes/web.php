@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\InputDataController;
+use App\Http\Controllers\PeopleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/input', [InputDataController::class, 'input']);
+Route::post('/input', [InputDataController::class, 'upload']);
